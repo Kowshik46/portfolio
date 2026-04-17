@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
-import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import { motion, type HTMLMotionProps } from "framer-motion";
+import type { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
 
-type AnimatedSectionProps = ComponentPropsWithoutRef<"section"> & {
+type AnimatedSectionProps = Omit<HTMLMotionProps<"section">, "children"> & {
   children: ReactNode;
   delay?: number;
 };
